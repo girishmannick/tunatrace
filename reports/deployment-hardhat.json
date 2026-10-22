@@ -1,0 +1,43 @@
+{
+  "network": "hardhat",
+  "chainId": 31337,
+  "contract": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "deployBlock": 1,
+  "deployTx": "0x419c66a9ae2e1fbbcab15a71efa94357015156e818d6c248539e1e6baf480c96",
+  "deployedAt": "2026-10-22T18:28:12.904Z",
+  "admin": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "explorer": null,
+  "rpcUrls": [
+    "http://127.0.0.1:8545"
+  ],
+  "gtins": {
+    "frozen": "06099999000027",
+    "chilled": "06099999000010"
+  },
+  "serialScheme": "TT0001 to TT<quantity>, 4 digits",
+  "seededLots": {
+    "good": "YFT-ULT-2610-A",
+    "bad": "YFT-ULT-2610-B"
+  },
+  "licensedZone": {
+    "minLat": -24,
+    "maxLat": -16,
+    "minLon": 53,
+    "maxLon": 62
+  },
+  "marinePark": {
+    "minLat": -20.47,
+    "maxLat": -20.42,
+    "minLon": 57.69,
+    "maxLon": 57.74
+  },
+  "demoWallets": {
+    "regulator": "0x63e6631f6073c8F58B349d0Cc213fC8Ba9970B9b",
+    "processor": "0x1109d1D0b2063dfC05c84D5D16FC142664040CB2",
+    "distributor": "0x8500354276ECCA256C0c87a5058942c514B8Fec7",
+    "retailer": "0xaF4F7b91d57D14E974b9b9F44D800cbB3f3736eC",
+    "oracle": "0x975ab18860E2aCc2645FA5f15ce88b7fC21d77A8",
+    "inspector": "0x5613b12A314AB0088E2cc3b30F776c97F3A13ff6",
+    "vessel": "0x85fbf911498bDc76D0f74DA0e70A906858879b65"
+  }
+}

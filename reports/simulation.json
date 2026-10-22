@@ -1,0 +1,451 @@
+{
+  "generatedAt": "2026-10-21T20:03:25.548Z",
+  "network": {
+    "chainId": 31337,
+    "note": "Hardhat EVM standing in for a QBFT consortium chain"
+  },
+  "actors": {
+    "regulator": {
+      "name": "Fisheries Competent Authority (fictional)",
+      "address": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+    },
+    "processor": {
+      "name": "Port Louis Ocean Foods Ltd (fictional)",
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+    },
+    "distributor": {
+      "name": "IslandCold Logistics (fictional)",
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
+    },
+    "retailer": {
+      "name": "Lagoon Fresh Market (fictional)",
+      "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
+    },
+    "gateway": {
+      "name": "IoT oracle gateway",
+      "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65"
+    },
+    "lab": {
+      "name": "Marine Food Lab (fictional, ISO 17025)",
+      "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc"
+    }
+  },
+  "contract": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "vessel": {
+    "name": "FV Albacora Star (fictional)",
+    "key": "0x88d1F49fE46cd1B36cB4c956D2d20247b0D11cF3",
+    "licence": "MU-LL-0042",
+    "licensedZone": {
+      "minLat": -24,
+      "maxLat": -16,
+      "minLon": 53,
+      "maxLon": 62
+    },
+    "marinePark": {
+      "minLat": -20.47,
+      "maxLat": -20.42,
+      "minLon": 57.69,
+      "maxLon": 57.74
+    }
+  },
+  "catch": {
+    "id": "0x849b3b2932481813d08056076f2832090ac2d3af354020bd9513b75011ae721d",
+    "species": "YFT",
+    "weightKg": 420,
+    "usedKg": 180,
+    "lat": -19.2514,
+    "lon": 58.1032,
+    "caughtAt": "2026-10-20T20:03:30.000Z"
+  },
+  "documents": {
+    "catchAndHealthCertCid": "bafkreieqzjmjgpiqu5hrncy2raj2b6qzsk3asfzodka4cz4nfeklbntnke",
+    "certKeyFingerprint": "0x184677e4d0b0efed",
+    "deliveryNoteCid": "bafkreicqm5hy5lazwjc6oe4l2xthqtobpk6visqxrlsfix2z4svepis6gm",
+    "rawSensorLogCid": "bafkreih62lum7z4huifwx7fw4yzk3ywhs47ruw2r7mhlbfizparf2e4ubi",
+    "dnaReportCid": "bafkreicabcecasckqdbm7q4fixkyoynz3rpka7xi3icev4qtjlrktec2ji"
+  },
+  "serialisation": {
+    "packsPerLot": 200,
+    "merkleRoot": "0x820a27678220e810f56bc2706b79bf38e2cd0056f4682428c88296db555d0b6c",
+    "proofLength": 7
+  },
+  "lots": {
+    "good": {
+      "id": "0x566d5f148f3c3be50e6dabe2812115b60235d6b408c39d85a0fc29b3a5e36ebf",
+      "lot": "YFT-2026-1019-A",
+      "status": "Received",
+      "abuseScore": 165,
+      "excursionSec": 900,
+      "shelfLifeLostHours": 5.5,
+      "sold": 1,
+      "dnaVerified": true,
+      "custodian": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
+    },
+    "bad": {
+      "id": "0x17d0118afd4a725adfb70c750024e338ce7a776d849e58cd591e2894fee56476",
+      "lot": "YFT-2026-1019-B",
+      "status": "Quarantined",
+      "abuseScore": 2685,
+      "excursionSec": 4500,
+      "shelfLifeLostHours": 89.5,
+      "quarantinedAtWindow": 13,
+      "downstreamAcceptBlocked": true
+    }
+  },
+  "attacks": {
+    "forgedCatchFromUnlicensedVessel": "Rejected: UnknownVessel",
+    "catchInsideMarinePark": "Rejected: InsideProtectedArea",
+    "replayedCatchDeclaration": "Rejected: StaleNonce",
+    "launderingBeyondCatchWeight": "Rejected: MassBalanceExceeded",
+    "implausibleYield": "Rejected: YieldImplausible"
+  },
+  "verification": {
+    "beforeSale": {
+      "verdict": "Genuine",
+      "species": "YFT",
+      "vessel": "FV Albacora Star (fictional)",
+      "lat": -19.2514,
+      "lon": 58.1032,
+      "caughtAt": "2026-10-20T20:03:30.000Z",
+      "effectiveUseBy": "2026-11-01T14:33:30.000Z",
+      "abuseScore": 165,
+      "dnaVerified": true
+    },
+    "afterSale": "GenuineAlreadySold",
+    "counterfeitSerial": "UnknownSerial",
+    "quarantinedLotPack": "Quarantined",
+    "verifyPackGasIfOnChain": 61443
+  },
+  "audit": {
+    "spikeMinute": {
+      "ts": "2026-10-21T22:51:00.000Z",
+      "tempC": 5.1
+    },
+    "merkleProofLength": 4,
+    "provenAgainstOnChainRoot": true
+  },
+  "docIntegrity": {
+    "originalMatchesLedger": true,
+    "tamperedMatchesLedger": false
+  },
+  "telemetry": {
+    "A": [
+      {
+        "start": 1792613700,
+        "min": 1.6,
+        "max": 2
+      },
+      {
+        "start": 1792614600,
+        "min": 1.7,
+        "max": 2.2
+      },
+      {
+        "start": 1792615500,
+        "min": 1.9,
+        "max": 2.3
+      },
+      {
+        "start": 1792616400,
+        "min": 2.1,
+        "max": 2.5
+      },
+      {
+        "start": 1792617300,
+        "min": 2.1,
+        "max": 2.5
+      },
+      {
+        "start": 1792618200,
+        "min": 2,
+        "max": 2.5
+      },
+      {
+        "start": 1792619100,
+        "min": 1.9,
+        "max": 2.3
+      },
+      {
+        "start": 1792620000,
+        "min": 1.6,
+        "max": 2.1
+      },
+      {
+        "start": 1792620900,
+        "min": 1.4,
+        "max": 1.8
+      },
+      {
+        "start": 1792621800,
+        "min": 1.1,
+        "max": 1.6
+      },
+      {
+        "start": 1792622700,
+        "min": 0.9,
+        "max": 5.1
+      },
+      {
+        "start": 1792623600,
+        "min": 0.8,
+        "max": 1.2
+      },
+      {
+        "start": 1792624500,
+        "min": 0.7,
+        "max": 1.1
+      },
+      {
+        "start": 1792625400,
+        "min": 0.7,
+        "max": 1.1
+      },
+      {
+        "start": 1792626300,
+        "min": 0.8,
+        "max": 1.2
+      },
+      {
+        "start": 1792627200,
+        "min": 1,
+        "max": 1.4
+      },
+      {
+        "start": 1792628100,
+        "min": 1.1,
+        "max": 1.7
+      },
+      {
+        "start": 1792629000,
+        "min": 1.5,
+        "max": 1.8
+      },
+      {
+        "start": 1792629900,
+        "min": 1.7,
+        "max": 2.2
+      },
+      {
+        "start": 1792630800,
+        "min": 2,
+        "max": 2.3
+      },
+      {
+        "start": 1792631700,
+        "min": 2.1,
+        "max": 2.5
+      },
+      {
+        "start": 1792632600,
+        "min": 2.1,
+        "max": 2.5
+      },
+      {
+        "start": 1792633500,
+        "min": 2.1,
+        "max": 2.4
+      },
+      {
+        "start": 1792634400,
+        "min": 1.9,
+        "max": 2.4
+      }
+    ],
+    "B": [
+      {
+        "start": 1792613700,
+        "min": 1.5,
+        "max": 2
+      },
+      {
+        "start": 1792614600,
+        "min": 1.7,
+        "max": 2.2
+      },
+      {
+        "start": 1792615500,
+        "min": 2,
+        "max": 2.4
+      },
+      {
+        "start": 1792616400,
+        "min": 2.1,
+        "max": 2.4
+      },
+      {
+        "start": 1792617300,
+        "min": 2.1,
+        "max": 2.5
+      },
+      {
+        "start": 1792618200,
+        "min": 2,
+        "max": 2.3
+      },
+      {
+        "start": 1792619100,
+        "min": 1.8,
+        "max": 2.3
+      },
+      {
+        "start": 1792620000,
+        "min": 1.7,
+        "max": 2.2
+      },
+      {
+        "start": 1792620900,
+        "min": 1.4,
+        "max": 1.9
+      },
+      {
+        "start": 1792621800,
+        "min": 1.1,
+        "max": 1.6
+      },
+      {
+        "start": 1792622700,
+        "min": 0.9,
+        "max": 1.4
+      },
+      {
+        "start": 1792623600,
+        "min": 0.8,
+        "max": 1.1
+      },
+      {
+        "start": 1792624500,
+        "min": 0.7,
+        "max": 5
+      },
+      {
+        "start": 1792625400,
+        "min": 5.2,
+        "max": 7.4
+      },
+      {
+        "start": 1792626300,
+        "min": 7.6,
+        "max": 9.5
+      },
+      {
+        "start": 1792627200,
+        "min": 6.9,
+        "max": 9.2
+      },
+      {
+        "start": 1792628100,
+        "min": 4.5,
+        "max": 6.8
+      },
+      {
+        "start": 1792629000,
+        "min": 1.4,
+        "max": 1.9
+      },
+      {
+        "start": 1792629900,
+        "min": 1.7,
+        "max": 2.1
+      },
+      {
+        "start": 1792630800,
+        "min": 1.9,
+        "max": 2.4
+      },
+      {
+        "start": 1792631700,
+        "min": 2,
+        "max": 2.4
+      },
+      {
+        "start": 1792632600,
+        "min": 2.1,
+        "max": 2.5
+      },
+      {
+        "start": 1792633500,
+        "min": 2.1,
+        "max": 2.5
+      },
+      {
+        "start": 1792634400,
+        "min": 1.9,
+        "max": 2.3
+      }
+    ]
+  },
+  "gas": {
+    "deploy": {
+      "calls": 1,
+      "avg": 4708295,
+      "min": 4708295,
+      "max": 4708295
+    },
+    "grantRole": {
+      "calls": 5,
+      "avg": 51233,
+      "min": 51223,
+      "max": 51235
+    },
+    "registerVessel": {
+      "calls": 1,
+      "avg": 188351,
+      "min": 188351,
+      "max": 188351
+    },
+    "addProtectedArea": {
+      "calls": 1,
+      "avg": 73887,
+      "min": 73887,
+      "max": 73887
+    },
+    "declareCatch": {
+      "calls": 1,
+      "avg": 190454,
+      "min": 190454,
+      "max": 190454
+    },
+    "createLot": {
+      "calls": 2,
+      "avg": 424757,
+      "min": 416207,
+      "max": 433307
+    },
+    "bindSensor": {
+      "calls": 2,
+      "avg": 51518,
+      "min": 51512,
+      "max": 51524
+    },
+    "initiateTransfer": {
+      "calls": 3,
+      "avg": 88262,
+      "min": 86717,
+      "max": 91341
+    },
+    "recordTelemetry": {
+      "calls": 48,
+      "avg": 58815,
+      "min": 54366,
+      "max": 90884
+    },
+    "acceptTransfer": {
+      "calls": 2,
+      "avg": 107695,
+      "min": 107695,
+      "max": 107695
+    },
+    "recordSpeciesTest": {
+      "calls": 1,
+      "avg": 39704,
+      "min": 39704,
+      "max": 39704
+    },
+    "sell": {
+      "calls": 1,
+      "avg": 70682,
+      "min": 70682,
+      "max": 70682
+    }
+  }
+}

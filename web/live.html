@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TunaTrace Live</title>
+<meta name="description" content="Catch-to-plate tuna traceability running on the Ethereum Sepolia test network.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><path d="M2 10c5-7 14-8 20-3l6-5-1 8 1 8-6-5c-6 5-15 4-20-3z" fill="var(--accent)"/><circle cx="8" cy="9" r="1.4" fill="var(--surface)"/></svg>TunaTrace <span class="modepill live">Live</span></div>
+    <div class="chain" id="chainInfo">Connecting…</div>
+    <nav class="views" aria-label="Views">
+      <button data-view="portal" aria-pressed="true">Stakeholder portal</button>
+      <button data-view="shopper" aria-pressed="false">Shopper check</button>
+      <a href="index.html">Offline demo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="setupError" hidden class="note err" style="margin-top:16px"></div>
+
+  <section id="v-portal">
+    <div class="sub">
+      <span class="label">Acting as</span>
+      <div class="role" id="roles"></div>
+      <span class="who" id="who"></span>
+    </div>
+    <main class="grid">
+      <div class="stack">
+        <div class="panel" id="actionPanel"></div>
+        <div class="panel">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><h2 style="margin:0">Lots on the blockchain</h2><button class="btn ghost small" id="refresh" type="button">Refresh</button></div>
+          <div class="list" id="lotList" style="margin-top:10px"><p class="muted">Loading from the blockchain…</p></div>
+          <h2 style="margin:16px 0 10px">Declared catches</h2>
+          <div class="list" id="catchList"></div>
+        </div>
+      </div>
+      <div class="panel" id="detail"><p class="muted">Select a lot.</p></div>
+    </main>
+  </section>
+
+  <section id="v-shopper" hidden>
+    <main class="shopper">
+      <div class="phone">
+        <div>
+          <div class="label">Check your tuna</div>
+          <h2 style="margin:4px 0 0">Scan the QR code, or type the code on the pack</h2>
+          <p class="muted">This reads the real contract on the Sepolia blockchain. It is free and needs no wallet or app.</p>
+        </div>
+        <div class="samples" id="samples"></div>
+        <form id="verifyForm">
+          <label for="vLink">Paste a scanned link (optional)<input id="vLink" class="mono" placeholder="…/01/06099999000027/10/YFT-ULT-2610-A/21/TT0007"></label>
+          <div class="row2">
+            <label for="vGtin">GTIN (01)<input id="vGtin" class="mono" required></label>
+            <label for="vLot">Lot (10)<input id="vLot" class="mono" required></label>
+          </div>
+          <label for="vSerial">Serial (21)<input id="vSerial" class="mono" required></label>
+          <button class="btn" type="submit">Check this pack</button>
+        </form>
+        <div id="verdict"></div>
+      </div>
+    </main>
+  </section>
+</div>
+<div class="activity" id="activity" hidden role="status"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="deployment.js"></script>
+<script src="chain-live.js"></script>
+<script src="app.js"></script>
+<script>TT_START(TT_LIVE_BACKEND());</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "contract": "0x10e0ccD71Df9C0Cc559Db485b89c684483AB51B4",
+  "deployBlock": 11971340,
+  "deployTx": "0xbfa8c12d9f68b5e0a01ecee46e764d91429cc448939a21d419eb76723c2ca8f4",
+  "deployedAt": "2026-10-22T18:37:54.034Z",
+  "admin": "0x8AaCEe13b953b9c9c67F907F3C3304a4054A09Df",
+  "explorer": "https://sepolia.etherscan.io",
+  "rpcUrls": [
+    "https://ethereum-sepolia-rpc.publicnode.com",
+    "https://sepolia.drpc.org",
+    "https://1rpc.io/sepolia"
+  ],
+  "gtins": {
+    "frozen": "06099999000027",
+    "chilled": "06099999000010"
+  },
+  "serialScheme": "TT0001 to TT<quantity>, 4 digits",
+  "seededLots": {
+    "good": "YFT-ULT-2610-A",
+    "bad": "YFT-ULT-2610-B"
+  },
+  "licensedZone": {
+    "minLat": -24,
+    "maxLat": -16,
+    "minLon": 53,
+    "maxLon": 62
+  },
+  "marinePark": {
+    "minLat": -20.47,
+    "maxLat": -20.42,
+    "minLon": 57.69,
+    "maxLon": 57.74
+  },
+  "demoWallets": {
+    "regulator": "0xBA44B55CAC7F585c2F053d8E7B6eAC3153c0D013",
+    "processor": "0xDD2FEBc11F15BDD3a0F3890e8D140c42c0cf436F",
+    "distributor": "0xe22E4A8dAFfDD9283248B5ee7c7F8D7147B11548",
+    "retailer": "0x7B117d09647Efb979d99a62f51B67cc01b472522",
+    "oracle": "0x0c46F3E38DB909514AC7939f86C7FE296BE7d787",
+    "inspector": "0x075923bF137eCbA81D9c31C7EfB7d600CcDE5875",
+    "vessel": "0x9C59889D906FFF86F6aA13deB195962F04632919"
+  }
+}
